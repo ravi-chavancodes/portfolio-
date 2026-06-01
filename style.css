@@ -1,0 +1,482 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:#0a192f;
+    color:#ccd6f6;
+    display:flex;
+}
+
+/* ======================
+   SIDEBAR
+====================== */
+
+.sidebar{
+    width:35%;
+    height:100vh;
+
+    position:fixed;
+    left:0;
+    top:0;
+
+    padding:80px 60px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+
+    background:#0a192f;
+}
+
+.sidebar h1{
+    font-size:56px;
+    color:#e6f1ff;
+    margin-bottom:15px;
+}
+
+.typing-text{
+    font-size:22px;
+    color:#ccd6f6;
+    margin-bottom:20px;
+}
+
+.intro{
+    color:#8892b0;
+    line-height:1.8;
+    margin-bottom:40px;
+}
+
+/* ======================
+   NAVIGATION
+====================== */
+
+.sidebar-links{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.sidebar-links a{
+    text-decoration:none;
+
+    color:#8892b0;
+
+    display:flex;
+    align-items:center;
+
+    gap:15px;
+
+    transition:.3s;
+}
+
+.sidebar-links a span{
+    width:30px;
+    height:1px;
+
+    background:#8892b0;
+
+    transition:.3s;
+}
+
+.sidebar-links a:hover{
+    color:#64ffda;
+}
+
+.sidebar-links a:hover span{
+    width:60px;
+    background:#64ffda;
+}
+
+.sidebar-links a.current{
+    color:#64ffda;
+}
+
+.sidebar-links a.current span{
+    width:60px;
+    background:#64ffda;
+}
+
+/* ======================
+   SOCIAL
+====================== */
+
+.social-links{
+    display:flex;
+    gap:20px;
+    margin-bottom:25px;
+}
+
+.social-links a{
+    text-decoration:none;
+    color:#64ffda;
+    transition:.3s;
+}
+
+.social-links a:hover{
+    transform:translateY(-3px);
+}
+
+/* ======================
+   RESUME
+====================== */
+
+.resume-btn{
+
+    display:inline-block;
+
+    padding:12px 24px;
+
+    border:1px solid #64ffda;
+
+    color:#64ffda;
+
+    text-decoration:none;
+
+    border-radius:6px;
+
+    transition:.3s;
+}
+
+.resume-btn:hover{
+
+    background:#64ffda;
+
+    color:#0a192f;
+}
+
+/* ======================
+   MAIN
+====================== */
+
+main{
+    width:65%;
+    margin-left:35%;
+    padding:80px;
+}
+
+/* ======================
+   SECTIONS
+====================== */
+
+section{
+    margin-bottom:120px;
+}
+
+section h2{
+    color:#e6f1ff;
+    font-size:32px;
+    margin-bottom:35px;
+}
+
+section p{
+    color:#8892b0;
+    line-height:1.9;
+}
+
+/* ======================
+   SKILLS
+====================== */
+
+.skills-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(140px,1fr));
+
+    gap:20px;
+}
+
+.skill-card{
+
+    background:#112240;
+
+    padding:25px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.4s;
+}
+
+.skill-card:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.08);
+
+    color:#64ffda;
+
+    box-shadow:
+    0 0 25px rgba(100,255,218,.3);
+}
+
+/* ======================
+   CARDS
+====================== */
+
+.card{
+
+    background:#112240;
+
+    padding:30px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    transition:.4s;
+}
+
+.card:hover{
+
+    transform:
+    translateY(-8px);
+
+    box-shadow:
+    0 0 25px rgba(100,255,218,.2);
+}
+
+.card h3{
+    color:#e6f1ff;
+    margin-bottom:12px;
+}
+
+/* ======================
+   PROJECTS
+====================== */
+
+.project-card{
+
+    background:#112240;
+
+    padding:35px;
+
+    border-radius:10px;
+
+    margin-bottom:25px;
+
+    transition:.4s;
+
+    cursor:pointer;
+}
+
+.project-card:hover{
+
+    transform:
+    translateY(-12px)
+    scale(1.03);
+
+    box-shadow:
+    0 0 30px rgba(100,255,218,.25);
+}
+
+.project-card h3{
+    color:#e6f1ff;
+    margin-bottom:15px;
+}
+
+.project-tech{
+
+    margin-top:15px;
+
+    color:#64ffda;
+
+    font-size:14px;
+}
+
+/* ======================
+   CONTACT
+====================== */
+
+.contact-box{
+
+    background:#112240;
+
+    padding:30px;
+
+    border-radius:10px;
+}
+
+.contact-box p{
+    margin-bottom:15px;
+}
+
+.contact-box a{
+
+    color:#64ffda;
+
+    text-decoration:none;
+}
+
+.contact-box a:hover{
+    text-decoration:underline;
+}
+
+/* ======================
+   ANIMATION
+====================== */
+
+.card,
+.project-card,
+.skill-card{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+    opacity .6s ease,
+    transform .6s ease;
+}
+
+.card.active,
+.project-card.active,
+.skill-card.active{
+
+    opacity:1;
+
+    transform:translateY(0);
+}
+
+/* ======================
+   TOP BUTTON
+====================== */
+
+#topBtn{
+
+    position:fixed;
+
+    bottom:25px;
+    right:25px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#64ffda;
+
+    color:#0a192f;
+
+    font-size:22px;
+
+    cursor:pointer;
+
+    display:none;
+
+    transition:.3s;
+}
+
+#topBtn:hover{
+    transform:translateY(-5px);
+}
+
+/* ======================
+   SCROLLBAR
+====================== */
+
+::-webkit-scrollbar{
+    width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#64ffda;
+
+    border-radius:20px;
+}
+
+/* ======================
+   MOBILE
+====================== */
+
+@media(max-width:900px){
+
+    body{
+        display:block;
+    }
+
+    .sidebar{
+
+        position:relative;
+
+        width:100%;
+
+        height:auto;
+
+        padding:50px 30px;
+    }
+
+    .sidebar h1{
+        font-size:42px;
+    }
+
+    .typing-text{
+        font-size:18px;
+    }
+
+    main{
+
+        width:100%;
+
+        margin-left:0;
+
+        padding:40px 30px;
+    }
+}
+
+/* ==========================
+   CONTACT ICON BUTTONS
+========================== */
+
+.contact-icons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    margin-top:20px;
+}
+
+.icon-btn{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:14px 18px;
+
+    background:#112240;
+    border-radius:12px;
+
+    color:#64ffda;
+    text-decoration:none;
+
+    font-size:16px;
+
+    transition:0.3s ease;
+
+    border:1px solid transparent;
+}
+
+.icon-btn i{
+    font-size:22px;
+    color:#64ffda;
+}
+
+.icon-btn:hover{
+    transform:translateY(-8px);
+    background:#0f2a3f;
+    border:1px solid #64ffda;
+    box-shadow:0 0 20px rgba(100,255,218,0.25);
+}

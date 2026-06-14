@@ -10,7 +10,7 @@ const text =
 
 let i = 0;
 
-typingText.innerHTML = "";
+typingText.inanerHTML = "";
 
 function typeWriter() {
 

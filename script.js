@@ -5,27 +5,29 @@
 const typingText =
 document.querySelector(".typing-text");
 
-const text =
-"BSc IT Student & Aspiring Software Developer";
+if (typingText) {
 
-let i = 0;
+    const text =
+    "BSc IT Student & Aspiring Software Developer";
 
-typingText.inanerHTML = "";
+    let i = 0;
 
-function typeWriter() {
+    typingText.innerHTML = "";
 
-    if (i < text.length) {
+    function typeWriter() {
 
-        typingText.innerHTML += text.charAt(i);
+        if (i < text.length) {
 
-        i++;
+            typingText.innerHTML += text.charAt(i);
 
-        setTimeout(typeWriter, 50);
+            i++;
+
+            setTimeout(typeWriter, 50);
+        }
     }
+
+    typeWriter();
 }
-
-typeWriter();
-
 
 // =============================
 // SCROLL REVEAL
@@ -33,7 +35,7 @@ typeWriter();
 
 const revealElements =
 document.querySelectorAll(
-".card, .project-card, .skill-card"
+".card, .project-card, .skill-category"
 );
 
 function reveal() {
@@ -69,9 +71,7 @@ const sections =
 document.querySelectorAll("section");
 
 const navLinks =
-document.querySelectorAll(
-".sidebar-links a"
-);
+document.querySelectorAll(".navbar a");
 
 window.addEventListener("scroll", () => {
 
@@ -143,7 +143,7 @@ topBtn.addEventListener("click", () => {
 // =============================
 
 const skillCards =
-document.querySelectorAll(".skill-card");
+document.querySelectorAll(".skill-category");
 
 skillCards.forEach((card) => {
 
@@ -191,4 +191,17 @@ projectCards.forEach((card) => {
 window.addEventListener("load", () => {
 
     document.body.style.opacity = "1";
+});
+
+const glow =
+document.querySelector(".cursor-glow");
+
+document.addEventListener("mousemove",(e)=>{
+
+    glow.style.left =
+    e.clientX + "px";
+
+    glow.style.top =
+    e.clientY + "px";
+
 });
